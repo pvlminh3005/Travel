@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel/components/hotel_carousel.dart';
@@ -11,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
@@ -86,28 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
             HotelCarousel(),
           ],
         ),
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: 1,
-        backgroundColor: Theme.of(context).primaryColor,
-        animationDuration: Duration(milliseconds: 150),
-        items: [
-          Icon(Icons.search, size: 30),
-          Container(
-            width: 45,
-            height: 45,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mh-celeb-name-changes-1567632828.png?crop=0.460xw:0.920xh;0,0&resize=640:*'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(50.0)),
-            ),
-          ),
-          Icon(Icons.list, size: 30),
-        ],
       ),
     );
   }
